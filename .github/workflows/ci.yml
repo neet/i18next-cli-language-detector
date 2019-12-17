@@ -39,9 +39,13 @@ jobs:
     - name: Yarn install, build, and test
       run: |
         yarn install --frozen-lockfile
-        yarn global install i18next
+        yarn add i18next
         yarn run build
         yarn run test
         yarn run lint
       env:
         CI: true
+        
+    - uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
