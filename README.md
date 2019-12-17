@@ -24,5 +24,15 @@ i18next
   .init();
 ```
 
+## Supported environment variables
+i18next-cli-language-detector refers following variables to determine which language to activate. 
+
+- `LC_ALL`
+- `LC_MESSAGES`
+- `LANG`
+- `LANGUAGE`
+
+As for the format of those variables, see [Gettext's documentation](http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html).
+
 ## License
 MIT
