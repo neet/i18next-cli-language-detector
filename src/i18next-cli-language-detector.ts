@@ -41,11 +41,12 @@ export class I18nextCLILanguageDetector {
 
     // Get array of available languages
     const LCs = rawLC.split(':');
-    if (LCs.length < 1) return;
 
     const LC = LCs[0]
-      .split('.')[0] // Get `en_US` part from `en_US.UTF-8`
-      .replace('_', '-'); // transforms `en_US` to `en-US`
+      // Get `en_US` part from `en_US.UTF-8`
+      .split('.')[0]
+      // transforms `en_US` to `en-US`
+      .replace('_', '-');
 
     // https://unix.stackexchange.com/questions/87745/what-does-lc-all-c-do
     if (LC === 'C') return;
