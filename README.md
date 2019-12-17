@@ -3,7 +3,7 @@
 ![ci](https://github.com/neet/i18next-cli-language-detector/workflows/CI/badge.svg)
 ![codecov](https://codecov.io/gh/neet/i18next-cli-language-detector/branch/master/graph/badge.svg)
 
-i18next third-party module for detecting user's language on CLI.
+i18next third-party language detector for CLI.
 
 ## Installation
 
