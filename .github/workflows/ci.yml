@@ -39,7 +39,7 @@ jobs:
     - name: Yarn install, build, and test
       run: |
         yarn install --frozen-lockfile
-        yarn global install i18next
+        yarn global add i18next
         yarn run build
         yarn run test
         yarn run lint
