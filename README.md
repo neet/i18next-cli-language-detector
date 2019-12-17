@@ -1,1 +1,1 @@
-# i18next-cli
+# i18next-cli-language-detector
