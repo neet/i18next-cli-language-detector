@@ -11,6 +11,24 @@
     "test": "jest --config=jest.config.js",
     "lint": "eslint -c .eslintrc.json ./src/**/*.ts"
   },
+  "files": [
+    "dist",
+    "!**/__tests__",
+    "!**/__mocks__",
+    "!**/__fixtures__"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neet/i18next-cli-language-detector.git"
+  },
+  "keywords": [
+    "i18next",
+    "cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/neet/i18next-cli-language-detector/issues"
+  },
+  "homepage": "https://github.com/neet/i18next-cli-language-detector#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.18",
