@@ -5,6 +5,8 @@
 
 i18next third-party language detector for CLI.
 
+![screenshot](https://s5.gifyu.com/images/Screen-Recording-2019-12-18-at-1.08.45.gif)
+
 ## Installation
 
 ```sh
