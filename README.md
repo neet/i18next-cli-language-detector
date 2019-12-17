@@ -1,4 +1,7 @@
 # i18next-cli-language-detector
+![npm](https://img.shields.io/npm/v/i18next-cli-language-detector.svg)
+![ci](https://github.com/neet/i18next-cli-language-detector/workflows/CI/badge.svg)
+![codecov](https://codecov.io/gh/neet/i18next-cli-language-detector/branch/master/graph/badge.svg)
 
 i18next-cli-language-detector is a Third-party module for i18next to detecting user's language on CLI.
 
