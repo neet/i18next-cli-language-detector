@@ -34,6 +34,9 @@ class I18nextCLILanguageDetector {
     return;
   }
 
+  /**
+   * @see http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html
+   */
   private formatShellLocale(rawLC?: string) {
     if (!rawLC) return;
 
