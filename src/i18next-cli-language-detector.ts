@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Services, InitOptions } from 'i18next';
 
-class I18nextCLILanguageDetector {
+export class I18nextCLILanguageDetector {
   static type = 'languageDetector' as const;
 
   private services!: Services;
-  private detectorOptions!: any;
+  private detectorOptions!: {};
   private i18nextOptions!: InitOptions;
 
-  init(services: Services, detectorOptions: any, i18nextOptions: InitOptions) {
+  init(services: Services, detectorOptions: {}, i18nextOptions: InitOptions) {
     this.services = services;
     this.detectorOptions = detectorOptions;
     this.i18nextOptions = i18nextOptions;
@@ -55,10 +54,7 @@ class I18nextCLILanguageDetector {
   }
 
   private checkIfWhitelisted(language: string) {
-    return (
-      !this.detectorOptions.checkWhitelist ||
-      this.services.languageUtils.isWhitelisted(language)
-    );
+    return this.services.languageUtils.isWhitelisted(language);
   }
 
   private getFallbackLng() {
@@ -77,5 +73,3 @@ class I18nextCLILanguageDetector {
     );
   }
 }
-
-export default I18nextCLILanguageDetector;

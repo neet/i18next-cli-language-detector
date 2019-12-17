@@ -1,5 +1,5 @@
 import { Services } from 'i18next';
-import I18nextCLILanguageDetector from '../i18next-cli-language-detector';
+import { I18nextCLILanguageDetector } from '../i18next-cli-language-detector';
 
 const mockServices = {
   languageUtils: {
@@ -53,11 +53,7 @@ describe('I18nextCLILanguageDetector ', () => {
 
     process.env.LC_ALL = 'en_US.UTF-8';
 
-    languageDetector.init(
-      mockServices,
-      { checkWhitelist: true },
-      { fallbackLng: 'ja-JP' },
-    );
+    languageDetector.init(mockServices, {}, { fallbackLng: 'ja-JP' });
 
     const language = languageDetector.detect();
     expect(language).toBe('ja-JP');
