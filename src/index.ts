@@ -1,6 +1,7 @@
 import { LanguageDetectorModule, Services, InitOptions } from "i18next";
 
-export default class I18nextCliLanguageDetector implements LanguageDetectorModule {
+export class I18nextCLILanguageDetector implements LanguageDetectorModule {
+  static type = "languageDetector" as const;
   type = "languageDetector" as const;
 
   private readonly services: Services;
