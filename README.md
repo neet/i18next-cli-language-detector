@@ -36,7 +36,7 @@ i18next-cli-language-detector refers following variables to determine which lang
 - `LANG`
 - `LANGUAGE`
 
-As for the format of those variables, see [documentation of Gettext](http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html).
+As for the format of these variables, see [documentation of Gettext](http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html).
 
 ## Related projects
 - **[y18n](https://github.com/yargs/y18n)** - I18n utility, used by [yargs](https://github.com/yargs/yargs), a CLI framework for Node.js
