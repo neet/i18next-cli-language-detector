@@ -82,7 +82,7 @@ describe('I18nextCLILanguageDetector ', () => {
 
   it('fallbacks when the shell loale was blacklisted', () => {
     (mockServices.languageUtils.isWhitelisted as jest.Mock).mockImplementation(
-      lng => lng !== 'en-US',
+      (lng) => lng !== 'en-US',
     );
 
     process.env.LC_ALL = 'en_US.UTF-8';
