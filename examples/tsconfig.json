@@ -1,0 +1,10 @@
+{
+  "extends": "..",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "i18next-cli-language-detector": ["../src/index.ts"]
+    }
+  },
+  "include": ["./**/*"]
+}

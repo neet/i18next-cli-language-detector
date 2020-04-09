@@ -1,6 +1,6 @@
 /* eslint-disable */
 import i18next from 'i18next';
-import I18nextCLILanguageDetector from '../dist';
+import I18nextCLILanguageDetector from 'i18next-cli-language-detector';
 
 i18next.use(I18nextCLILanguageDetector).init({
   resources: {
