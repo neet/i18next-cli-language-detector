@@ -15,18 +15,18 @@ export class I18nextCLILanguageDetector {
 
   detect() {
     const shellLocale =
-      process.env.LC_ALL ||
-      process.env.LC_MESSAGES ||
-      process.env.LANG ||
+      process.env.LC_ALL ??
+      process.env.LC_MESSAGES ??
+      process.env.LANG ??
       process.env.LANGUAGE;
 
-    const formattedLangauge = this.formatShellLocale(shellLocale);
+    const formattedLanguage = this.formatShellLocale(shellLocale);
 
-    if (!formattedLangauge || !this.checkIfWhitelisted(formattedLangauge)) {
+    if (!formattedLanguage || !this.checkIfWhitelisted(formattedLanguage)) {
       return this.getFallbackLng();
     }
 
-    return formattedLangauge;
+    return formattedLanguage;
   }
 
   cacheUserLanguage() {
