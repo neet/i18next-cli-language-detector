@@ -8,7 +8,9 @@
   "type": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --config=jest.config.js --coverage",
+    "test": "yarn run test:jest && yarn run test:e2e",
+    "test:jest": "jest --config=jest.config.js --coverage",
+    "test:e2e": "bash ./e2e/test.sh",
     "lint": "eslint -c .eslintrc.json ./src/**/*.ts"
   },
   "files": [
