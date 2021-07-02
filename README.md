@@ -5,7 +5,7 @@
 
 i18next third-party language detector for CLI.
 
-![screenshot](https://s5.gifyu.com/images/Screen-Recording-2019-12-18-at-1.08.45.gif)
+https://user-images.githubusercontent.com/19276905/124214133-b8c69c80-db2c-11eb-82f3-d529c80456c7.mov
 
 **[> See examples](https://github.com/neet/i18next-cli-language-detector/blob/master/examples/greeting.ts)**
 
