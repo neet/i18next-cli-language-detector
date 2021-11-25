@@ -5,7 +5,7 @@
   "author": "Ryo Igarashi <n33t5hin@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "type": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "yarn run test:jest && yarn run test:e2e",
@@ -40,13 +40,13 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
-    "i18next": "^20.3.2",
+    "i18next": "^21.3.3",
     "jest": "^25.5.4",
     "prettier": "^2.3.2",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.10"
   },
   "peerDependencies": {
-    "i18next": "^19.0.2"
+    "i18next": "^21.0.0"
   }
 }
