@@ -1,76 +1,85 @@
-import { Services, InitOptions } from 'i18next';
+import { Services, InitOptions, LanguageDetectorModule } from 'i18next';
 
-export class I18nextCLILanguageDetector {
+export class I18nextCLILanguageDetector implements LanguageDetectorModule {
   static type = 'languageDetector' as const;
 
-  private services!: Services;
-  private detectorOptions!: {};
-  private i18nextOptions!: InitOptions;
+  type = I18nextCLILanguageDetector.type;
+  services!: Services;
+  detectorOptions!: {};
+  i18nextOptions!: InitOptions;
 
-  init(services: Services, detectorOptions: {}, i18nextOptions: InitOptions) {
+  init(
+    services: Services,
+    detectorOptions: {},
+    i18nextOptions: InitOptions,
+  ): void {
     this.services = services;
     this.detectorOptions = detectorOptions;
     this.i18nextOptions = i18nextOptions;
   }
 
-  detect() {
+  detect(): string | string[] | undefined {
     const shellLocale =
       process.env.LC_ALL ??
       process.env.LC_MESSAGES ??
       process.env.LANG ??
       process.env.LANGUAGE;
 
-    const formattedLanguage = this.formatShellLocale(shellLocale);
-
-    if (!formattedLanguage || !this.checkIfWhitelisted(formattedLanguage)) {
-      return this.getFallbackLng();
+    const language = this._getShellLanguage(shellLocale);
+    if (language != null) {
+      return language;
     }
 
-    return formattedLanguage;
-  }
-
-  cacheUserLanguage() {
-    return;
-  }
-
-  /**
-   * @see http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html
-   */
-  private formatShellLocale(rawLC?: string) {
-    if (!rawLC) return;
-
-    // Get array of available languages
-    const LCs = rawLC.split(':');
-
-    const LC = LCs[0]
-      // Get `en_US` part from `en_US.UTF-8`
-      .split('.')[0]
-      // transforms `en_US` to `en-US`
-      .replace('_', '-');
-
-    // https://unix.stackexchange.com/questions/87745/what-does-lc-all-c-do
-    if (LC === 'C') return;
-
-    return this.services.languageUtils.formatLanguageCode(LC);
-  }
-
-  private checkIfWhitelisted(language: string) {
-    return this.services.languageUtils.isWhitelisted(language);
-  }
-
-  private getFallbackLng() {
     if (Array.isArray(this.i18nextOptions.fallbackLng)) {
-      return this.i18nextOptions.fallbackLng[0];
+      return [...this.i18nextOptions.fallbackLng];
     }
 
     if (typeof this.i18nextOptions.fallbackLng === 'string') {
       return this.i18nextOptions.fallbackLng;
     }
 
-    return (
-      typeof this.i18nextOptions.fallbackLng === 'object' &&
-      this.i18nextOptions.fallbackLng.default &&
-      this.i18nextOptions.fallbackLng.default[0]
-    );
+    return undefined;
+  }
+
+  cacheUserLanguage(): void {
+    return;
+  }
+
+  /**
+   * @see http://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html
+   */
+  private _getShellLanguage(lc?: string): string | string[] | undefined {
+    if (lc == null) return;
+
+    const languages = lc
+      .split(':')
+      .map((language) =>
+        language
+          // Get `en_US` part from `en_US.UTF-8`
+          .split('.')[0]
+          // transforms `en_US` to `en-US`
+          .replace('_', '-'),
+      )
+      .filter((language) =>
+        this.services.languageUtils.isSupportedCode(language),
+      )
+      .map((language) =>
+        this.services.languageUtils.formatLanguageCode(language),
+      );
+
+    // https://unix.stackexchange.com/questions/87745/what-does-lc-all-c-do
+    if (languages.some((l) => l === 'C')) {
+      return;
+    }
+
+    if (languages.length === 1 && languages[0] === '') {
+      return;
+    }
+
+    if (languages.length === 1) {
+      return languages[0];
+    }
+
+    return languages;
   }
 }

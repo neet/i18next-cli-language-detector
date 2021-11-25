@@ -1,1 +1,2 @@
-export { I18nextCLILanguageDetector as default } from './i18next-cli-language-detector';
+import { I18nextCLILanguageDetector } from './i18next-cli-language-detector';
+export default I18nextCLILanguageDetector;
