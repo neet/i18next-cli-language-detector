@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default-member */
 import i18next from 'i18next';
 import { I18nextCLILanguageDetector } from '../i18next-cli-language-detector';
 
