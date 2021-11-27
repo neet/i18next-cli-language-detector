@@ -5,12 +5,12 @@ export class I18nextCLILanguageDetector implements LanguageDetectorModule {
 
   type = I18nextCLILanguageDetector.type;
   services!: Services;
-  detectorOptions!: {};
+  detectorOptions?: object;
   i18nextOptions!: InitOptions;
 
   init(
     services: Services,
-    detectorOptions: {},
+    detectorOptions: object,
     i18nextOptions: InitOptions,
   ): void {
     this.services = services;
