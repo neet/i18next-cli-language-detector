@@ -1,6 +1,6 @@
 /* eslint-disable */
 const i18next = require('i18next');
-const { default: I18nextCLILanguageDetector } = require('../dist/index');
+const I18nextCLILanguageDetector = require('../dist/index');
 
 i18next.use(I18nextCLILanguageDetector).init({
   resources: {

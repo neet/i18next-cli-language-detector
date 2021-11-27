@@ -4,20 +4,19 @@
   "version": "1.0.1",
   "author": "Ryo Igarashi <n33t5hin@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn run type-check && rollup -c rollup.config.js",
+    "type-check": "tsc --noEmit",
     "test": "yarn run test:jest && yarn run test:e2e",
-    "test:jest": "jest --config=jest.config.js --coverage",
+    "test:jest": "jest --coverage",
     "test:e2e": "bash ./e2e/test.sh",
     "lint": "eslint -c .eslintrc.json ./src/**/*.ts"
   },
   "files": [
-    "dist",
-    "!**/__tests__",
-    "!**/__mocks__",
-    "!**/__fixtures__"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -31,7 +30,23 @@
     "url": "https://github.com/neet/i18next-cli-language-detector/issues"
   },
   "homepage": "https://github.com/neet/i18next-cli-language-detector#readme",
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.ts",
+      "!**/*.d.ts",
+      "!**/node_modules/**"
+    ]
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^27.0.3",
@@ -45,8 +60,12 @@
     "i18next": "^21.5.3",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
+    "rollup": "^2.60.1",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-dts": "^4.0.1",
     "semantic-release": "^18.0.1",
     "ts-jest": "^27.0.7",
+    "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
