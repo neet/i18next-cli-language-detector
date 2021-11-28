@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/neet/i18next-cli-language-detector/compare/v1.0.1...v1.1.0) (2021-11-28)
+
+
+### Features
+
+* Support ESM ([ec1999f](https://github.com/neet/i18next-cli-language-detector/commit/ec1999f2038e4078a1a94882066b6d1d31399eba))
+
 ## [1.0.1](https://github.com/neet/i18next-cli-language-detector/compare/v1.0.0...v1.0.1) (2021-11-26)
 
 
