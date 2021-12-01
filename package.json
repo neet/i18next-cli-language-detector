@@ -58,7 +58,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "i18next": "^21.5.3",
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "prettier": "^2.4.1",
     "rollup": "^2.60.1",
     "rollup-plugin-auto-external": "^2.0.0",
