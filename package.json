@@ -60,7 +60,7 @@
     "i18next": "^21.5.4",
     "jest": "^27.4.5",
     "prettier": "^2.5.0",
-    "rollup": "^2.60.2",
+    "rollup": "^2.62.0",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-dts": "^4.0.1",
     "semantic-release": "^18.0.1",
