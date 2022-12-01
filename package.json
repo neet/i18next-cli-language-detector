@@ -59,7 +59,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "i18next": "^22.0.4",
     "jest": "^27.5.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "rollup": "^2.79.1",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-dts": "^4.2.3",
