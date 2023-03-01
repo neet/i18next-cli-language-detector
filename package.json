@@ -57,7 +57,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "i18next": "^22.0.4",
+    "i18next": "^22.4.10",
     "jest": "^27.5.0",
     "prettier": "^2.7.1",
     "rollup": "^2.79.1",
