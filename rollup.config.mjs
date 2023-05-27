@@ -3,7 +3,7 @@ import json from '@rollup/plugin-json';
 import typescript from '@rollup/plugin-typescript';
 import autoExternal from 'rollup-plugin-auto-external';
 import dts from 'rollup-plugin-dts';
-import packageJSON from './package.json';
+import packageJSON from './package.json' assert { type: 'json' };
 
 export default [
   {

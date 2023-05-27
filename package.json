@@ -8,7 +8,7 @@
   "types": "./dist/index.d.ts",
   "module": "./dist/index.mjs",
   "scripts": {
-    "build": "yarn run type-check && rollup -c rollup.config.js",
+    "build": "yarn run type-check && rollup -c rollup.config.mjs",
     "type-check": "tsc --noEmit",
     "test": "yarn run test:jest && yarn run test:e2e",
     "test:jest": "jest --coverage",
