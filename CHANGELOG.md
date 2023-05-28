@@ -1,3 +1,12 @@
+## [1.1.8](https://github.com/neet/i18next-cli-language-detector/compare/v1.1.7...v1.1.8) (2023-05-28)
+
+
+### Bug Fixes
+
+* Fix build script ([6fb3838](https://github.com/neet/i18next-cli-language-detector/commit/6fb3838684c8f316783ac36acdaf1df676226dee))
+* Fix tsconfig to not emit abundant declarations ([6a59029](https://github.com/neet/i18next-cli-language-detector/commit/6a59029380f47a20c953b34990f2b8f68f342a3a))
+* Remove explicit version specification from peerDependencies ([f039e0f](https://github.com/neet/i18next-cli-language-detector/commit/f039e0f6782677ac8affb703bf15a7f949601b98))
+
 ## [1.1.7](https://github.com/neet/i18next-cli-language-detector/compare/v1.1.6...v1.1.7) (2022-11-23)
 
 ## [1.1.6](https://github.com/neet/i18next-cli-language-detector/compare/v1.1.5...v1.1.6) (2022-06-11)

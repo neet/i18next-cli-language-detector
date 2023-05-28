@@ -1,7 +1,7 @@
 {
   "name": "i18next-cli-language-detector",
   "description": "i18next language detector module for CLI",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "author": "Ryo Igarashi <n33t5hin@gmail.com>",
   "license": "MIT",
   "main": "./dist/index.js",
